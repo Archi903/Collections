@@ -3,16 +3,14 @@ package rally;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Mechanics <T extends Transport> {
+public class Mechanic<T extends Transport> {
 
     private final String name;
     private final String company;
-    private final List <T> mechanics;
 
-    public Mechanics(String name, String company) {
+    public Mechanic(String name, String company) {
         this.name = name;
         this.company = company;
-        this.mechanics = new ArrayList<>();
     }
 
 
@@ -26,15 +24,15 @@ public class Mechanics <T extends Transport> {
 
 
     public void doService(T car){
-        mechanics.add(car);
         System.out.println("Механик " + getName() + " приступает к обслуживанию ТС: " + car.getBrand() + " " + car.getModel());
     }
 
     public void fixCar(T car){
-        mechanics.add(car);
         System.out.println("Механик " + getName() + " Ремонту ТС: " + car.getBrand() + " " + car.getModel());
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Механик: " + name + " из компании - " + getCompany();
+    }
 }

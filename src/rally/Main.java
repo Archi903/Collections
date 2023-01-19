@@ -2,8 +2,6 @@ package rally;
 
 import exception.NoDriveLicenseException;
 
-import java.util.ArrayList;
-
 
 public class Main {
     public static void main(String[] args){
@@ -52,19 +50,30 @@ public class Main {
         System.out.println("Количество машин в списке - " + cars.getAllTransport().size());
 
 
-        Mechanics<Car> willSmith = new Mechanics<>("Will Smith", "Warner");
-        Mechanics<Car> jackLite = new Mechanics<>("Jack Lite", "Mobil");
-        Mechanics<Car> ivanIvanov = new Mechanics<>("Ivan Ivanov", "Nokian");
-        Mechanics<Bus> petrovVladimir = new Mechanics<>("Petro Ivan", "Nokian");
-        Mechanics<Bus> komkovDmitry = new Mechanics<>("Komkov Dmitry", "Gaz");
-        Mechanics<Bus> sidorovPavel = new Mechanics<>("Sidorov Pavel", "Uaz");
-        Mechanics<Track> sazonovRoman = new Mechanics<>("Sazonov Roman", "Sever");
-        Mechanics<Track> bornJason = new Mechanics<>("Born Jason", "JBL");
-        Mechanics<Track> stathamJason = new Mechanics<>("Statham Jason", "Audi");
+        Mechanic<Car> willSmith = new Mechanic<>("Will Smith", "Warner");
+        Mechanic<Car> jackLite = new Mechanic<>("Jack Lite", "Mobil");
+        Mechanic<Car> ivanIvanov = new Mechanic<>("Ivan Ivanov", "Nokian");
+        Mechanic<Bus> petrovVladimir = new Mechanic<>("Petro Ivan", "Nokian");
+        Mechanic<Bus> komkovDmitry = new Mechanic<>("Komkov Dmitry", "Gaz");
+        Mechanic<Bus> sidorovPavel = new Mechanic<>("Sidorov Pavel", "Uaz");
+        Mechanic<Track> sazonovRoman = new Mechanic<>("Sazonov Roman", "Sever");
+        Mechanic<Track> bornJason = new Mechanic<>("Born Jason", "JBL");
+        Mechanic<Track> stathamJason = new Mechanic<>("Statham Jason", "Audi");
 
 
-
-
+        lada.setMechanics(willSmith);
+        lada.setMechanics(willSmith);
+        lada.setMechanics(jackLite);
+        gaz.setMechanics(komkovDmitry);
+        bmw.setMechanics(ivanIvanov);
+        System.out.println(lada.getMechanics().size());
+        System.out.println(lada.getMechanics().toString());
+        System.out.println(bmw.getMechanics().toString());
+        lada.getAllTeam();
+        bmw.getAllTeam();
+        volvo.setMechanics(stathamJason);
+        volvo.setMechanics(sazonovRoman);
+        volvo.getAllTeam();
     }
 
 

@@ -8,7 +8,7 @@ public abstract class Transport<T extends Driver> implements Competing {
     private final String model;
     private double engineVolume;
     private T driver;
-    private Mechanics mechanic;
+    private final ArrayList mechanics;
 
     private static final double DEFAULT_ENGINE_VALUE = 1.5;
 
@@ -17,6 +17,7 @@ public abstract class Transport<T extends Driver> implements Competing {
         this.model = model;
         setEngineVolume(engineVolume);
         setDriver(driver);
+        this.mechanics = new ArrayList();
     }
 
     public double getEngineVolume() {
@@ -65,7 +66,15 @@ public abstract class Transport<T extends Driver> implements Competing {
 
     public abstract void testCar();
 
+    public ArrayList getMechanics() {
+        return new ArrayList (mechanics);
+    }
 
+    public void setMechanics(Mechanic mechanics) {
+        this.mechanics.add(mechanics);
+    }
 
-
+    public void getAllTeam (){
+        System.out.println("У транспорта: " + getBrand() + " " + getModel() + " за рулем " + getDriver() + ", а обслуживает: " + getMechanics());
+    }
 }
