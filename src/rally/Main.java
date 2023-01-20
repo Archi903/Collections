@@ -2,11 +2,15 @@ package rally;
 
 import exception.NoDriveLicenseException;
 
+import java.util.HashMap;
+import java.util.Map;
+
 
 public class Main {
     public static void main(String[] args){
 
         ListCars cars = new ListCars();
+        Map<Transport, Mechanic> mechanics = new HashMap<>();
 
 
 
@@ -60,20 +64,14 @@ public class Main {
         Mechanic<Track> bornJason = new Mechanic<>("Born Jason", "JBL");
         Mechanic<Track> stathamJason = new Mechanic<>("Statham Jason", "Audi");
 
+        lada.setMechanics(lada,willSmith);
+        lada.setMechanics(lada,willSmith);
+        bmw.setMechanics(bmw,ivanIvanov);
+        volvo.setMechanics(volvo,stathamJason);
+        lada.getAllTeam(lada);
+        volvo.getAllTeam(volvo);
 
-        lada.setMechanics(willSmith);
-        lada.setMechanics(willSmith);
-        lada.setMechanics(jackLite);
-        gaz.setMechanics(komkovDmitry);
-        bmw.setMechanics(ivanIvanov);
-        System.out.println(lada.getMechanics().size());
-        System.out.println(lada.getMechanics().toString());
-        System.out.println(bmw.getMechanics().toString());
-        lada.getAllTeam();
-        bmw.getAllTeam();
-        volvo.setMechanics(stathamJason);
-        volvo.setMechanics(sazonovRoman);
-        volvo.getAllTeam();
+
     }
 
 
@@ -95,8 +93,5 @@ public class Main {
     public void nameOfDriverAndMechanics(Transport<?> transport){
         System.out.println("Автомобиль " + transport.getBrand() + " " + transport.getModel() + ": водитель - " + transport.getDriver() + ", Механик: ");
     }
-
-
-
 
 }

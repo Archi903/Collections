@@ -1,6 +1,7 @@
 package rally;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Car extends Transport<DriverA> {
 
@@ -35,6 +36,7 @@ public class Car extends Transport<DriverA> {
 
     public Car(String brand, String model, double engineVolume, DriverA driver) {
         super(brand, model, engineVolume, driver);
+
     }
 
 
